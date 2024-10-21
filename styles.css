@@ -1,0 +1,269 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* CSS Variables for Consistent Styling */
+  :root {
+    --primary-color: #2c3e50;
+    --secondary-color: #ecf0f1;
+    --accent-color: #3498db;
+    --overlay-color: rgba(44, 62, 80, 0.6);
+    --button-hover-color: #3498db;
+    --button-hover-text: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --card-hover-shadow: rgba(255, 0, 0, 0.5);
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color); /* Dark Blue */
+    padding: 15px 30px;
+  }
+  
+  .navbar-left .brand {
+    color: var(--secondary-color); /* Light Gray */
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .navbar-right a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1em;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-right a:hover {
+    color: var(--accent-color); /* Light Blue */
+  }
+  
+  /* Responsive Design for Navbar */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .navbar-right {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .navbar-right a {
+      margin: 10px 0;
+    }
+  }
+  
+  /* Home Section Styles */
+  .home-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: url('images/home-background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content {
+    text-align: center;
+    color: var(--secondary-color);
+    padding: 20px;
+  }
+  
+  .content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .get-started-btn {
+    padding: 15px 30px;
+    font-size: 1em;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .get-started-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--button-hover-text);
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Typography for Home Section */
+  @media (max-width: 768px) {
+    .content h1 {
+      font-size: 2em;
+    }
+  
+    .get-started-btn {
+      padding: 12px 25px;
+      font-size: 0.9em;
+    }
+  }
+  
+  /* Issues Section Styles */
+  .issues-section {
+    padding: 60px 30px;
+    text-align: center;
+  }
+  
+  .issues-header {
+    padding: 20px;
+    /* Removed color: Red; */
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  /* Back to Home Button Styles */
+  .back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: var(--accent-color);
+  }
+  
+  /* Container for Cards */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Increased for better spacing */
+    margin: 0 auto;
+  }
+  
+  /* Card Styles */
+  .card {
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff; /* Black background */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px var(--card-shadow);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px var(--card-hover-shadow); /* Red shadow on hover */
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    /* Removed color: #fff; */
+  }
+  
+  .card-text {
+    font-size: 14px;
+    /* Removed color: #fff; */
+    line-height: 1.5;
+  }
+  
+  /* Optional Glow Animation */
+  .glow-animation {
+    animation: glow 2s infinite;
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red glow */
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+  }
+  
+  /* Footer Styles */
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+  
+  /* Responsive Design for Cards */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%; /* Adjust card width on smaller screens */
+      height: auto; /* Let height adjust based on content */
+    }
+  }
+  
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  #support {
+    padding: 50px 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+  }
+  
+  #support h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+  }
+  
+  #support p {
+    font-size: 1.1em;
+    color: #666;
+  }
+  
